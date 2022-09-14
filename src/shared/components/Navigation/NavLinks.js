@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/auth-context";
 const NavLinks = () => {
     const auth = useContext(AuthContext);
     const location = `/${auth.userId}/places`;
-
+console.log(auth.userId)
     return <ul className="nav-links">
         <li>
             <NavLink to='/' exact="true" >ALL USERS</NavLink>

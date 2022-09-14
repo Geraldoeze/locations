@@ -6,7 +6,7 @@ let logoutTimer;
 export const useAuth = () => {
     const [token, setToken] = useState(null);
     const [tokenExpDate, setTokenExpDate] = useState();
-    const [userId, setUserId] = useState(false); 
+    const [userId, setUserId] = useState(null); 
   
     const login = useCallback((uid, token, expirationDate) => {
       setToken(token);
