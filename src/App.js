@@ -61,12 +61,12 @@ const App = () => {
         exact="true"
         element={<Users />}
       /> 
-      <Route path="/:userId/places"
+      {/* <Route path="/:userId/places"
         exact="true"
         element={
         <UserPlaces />
         }
-      />
+      /> */}
       <Route path="/auth"
         exact="true"
         element={
