@@ -28,8 +28,9 @@ const Auth = () => {
               value: '',
               isValid: false
           }
-      }, false); 
-
+      }, false
+    ); 
+console.log(formState)
     const switchModeHandler = () => {
          if (!isLoginMode) {
              setFormData(
@@ -94,6 +95,7 @@ const Auth = () => {
         };
 
     }
+    console.log(formState.isValid)
   
     // const errorHandler = () => {
     //     clearError();
@@ -144,7 +146,6 @@ const Auth = () => {
             />
             <Button
               type="submit" 
-              disabled={!formState.isValid}
             >{isLoginMode ? 'LOGIN' : 'SIGNUP'}</Button>
             <Button 
               type="button"

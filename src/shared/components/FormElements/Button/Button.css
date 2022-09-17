@@ -11,6 +11,8 @@
   display: inline-block;
 }
 
+
+
 .button:focus {
   outline: none;
 }
@@ -23,6 +25,8 @@
 
 .button--inverse {
   background: transparent;
+  display: block;
+  margin: 1rem auto;
   color: #ff0055;
 }
 
