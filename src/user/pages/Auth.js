@@ -30,7 +30,7 @@ const Auth = () => {
           }
       }, false
     ); 
-console.log(formState)
+
     const switchModeHandler = () => {
          if (!isLoginMode) {
              setFormData(
@@ -106,7 +106,7 @@ console.log(formState)
       <ErrorModal error={error} onClear={clearError} />
       <Card className="authentication">
         {isLoading && <LoadingSpinner asOverlay /> }
-        <h2> Login Required</h2> 
+        <h2>{isLoginMode ? "Login Required" : "Sign Up"}</h2> 
         <hr />
         <form onSubmit={authSubmitHandler}>
             {!isLoginMode && (

@@ -6,11 +6,13 @@
 }
 
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.2rem;
 }
 
 body {
   margin: 0;
+  letter-spacing: 2px;
   background: #4d4d4d;
 }
 

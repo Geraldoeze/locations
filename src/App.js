@@ -1,18 +1,13 @@
 
 import './App.css';
 import { Routes, Route, Navigate } from 'react-router';
-// import Users from './user/pages/Users';
-// import Auth from './user/pages/Auth';
-
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 
-// import NewPlace from './places/pages/NewPlaces';
 import React, {Suspense} from 'react';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import LoadingSpinner from './shared/components/UIElements/LoadingSpinner';
-// import UserPlaces from './places/pages/UserPlaces';
-// import UpdatePlace from './places/pages/UpdatePlace';
+
 
 const Users = React.lazy(() => import('./user/pages/Users'));
 const NewPlace = React.lazy(() => import('./places/pages/NewPlaces'));
