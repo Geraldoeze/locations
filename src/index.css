@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
-@import url("https://fonts.googleapis.com/css?family=Montserrat");
-@import url("https://fonts.googleapis.com/css?family=Trebuchet+MS");
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family:"Montserrat", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 1.2rem;
 }
 
@@ -14,6 +12,7 @@ body {
   margin: 0;
   letter-spacing: 2px;
   background: #4d4d4d;
+  font-family: "Montserrat";
 }
 
 .slide-in-left-enter {
