@@ -56,7 +56,7 @@ const Auth = () => {
          setIsLoginMode((prevMode) => !prevMode);
       };
         
-
+// https://mern-stack-kappa.vercel.app/
     const authSubmitHandler = async event => {
           event.preventDefault();
           
@@ -78,15 +78,18 @@ const Auth = () => {
            
           } else {
             try {
+              
               const formData = new FormData();
               formData.append('email', formState.inputs.email.value);
               formData.append('name', formState.inputs.name.value);
               formData.append('password', formState.inputs.password.value);
               formData.append('image', formState.inputs.image.value);
-              console.log(formState)
+            
+              
             const responseData = await sendRequest(process.env.REACT_APP_BACKEND_URL + "/users/signup",
                 'POST',
-                formData                
+                formData
+                
             );
             auth.login(responseData.userId, responseData.token);
             } catch (err) {

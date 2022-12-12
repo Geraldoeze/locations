@@ -1,5 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 
+
+
 export const useHttpClient = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState();
@@ -10,7 +12,7 @@ export const useHttpClient = () => {
         setIsLoading(true);
         const httpAbortCtrl = new AbortController();
         activeHttpRequests.current.push(httpAbortCtrl);
-
+        
         try {
         const response = await fetch(url, {
             method,
@@ -18,9 +20,9 @@ export const useHttpClient = () => {
             headers,
             signal: httpAbortCtrl.signal
         });
-        
-        const responseData = await response.json();
 
+        const responseData = await response.json();
+        
         activeHttpRequests.current = activeHttpRequests.current.filter(
             reqCtrl => reqCtrl !== httpAbortCtrl
         );

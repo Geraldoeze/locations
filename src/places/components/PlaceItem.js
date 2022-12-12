@@ -31,10 +31,10 @@ const PlaceItem = (props) => {
     const confirmDeleteHandler = async () => {
         setShowConfirmM(false);
         try {
-            await sendRequest(process.env.REACT_APP_BACKEND_URL + `/places${props.id}`,'DELETE', null,
+            await sendRequest(process.env.REACT_APP_BACKEND_URL + `/places/${props.id}`,'DELETE', null,
             {
                 // 'Content-Type': 'application/json',
-                Authorization: 'Bearer' + auth.token
+                Authorization: 'Bearer ' + auth.token
             });
             props.onDelete(props.id);
         } catch (err) {}
@@ -73,7 +73,7 @@ const PlaceItem = (props) => {
             <Card className="place-item__content">
               {isLoading && <LoadingSpinner asOverlay /> }
             <div className="place-item__image">
-                <img src={`${process.env.REACT_APP_ASSET_URL}/${props.image}`} alt={props.title} />
+                <img src={`${process.env.REACT_APP_ASSET_URL}${props.image}`} alt={props.title} />
             </div>
             <div className="place-item__info">
                 <h2>{props.title}</h2>

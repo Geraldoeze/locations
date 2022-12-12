@@ -55,21 +55,21 @@ const UpdatePlace = () => {
 
     const placeUpdateSubmitHandler = async event => {
         event.preventDefault();
-        console.log("ballerzz")
+        
         try {
-            await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`, 'PATCH', JSON.stringify({
+            await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`, 'PATCH', 
+            JSON.stringify({
                 title: formState.inputs.title.value,
-                description: formState.inputs.description.value
-                
+                description: formState.inputs.description.value  
             }), {
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer' + auth.token
+                Authorization: 'Bearer ' + auth.token
+                
                 }
-            );
-            
+            );     
             navigate('/' + auth.userId + '/places');
         } catch (err) {
-            console.log(err, 'Venom')
+            console.log(' Update Err, Venom')
         }
         
     }
