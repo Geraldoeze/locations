@@ -16,7 +16,7 @@ const UpdatePlace = React.lazy(() => import('./places/pages/UpdatePlace'));
 const Auth = React.lazy(() => import('./user/pages/Auth'));
 
 const App = () => { 
-
+// NewStrategy
   const { token, login, logout, userId } = useAuth();
   let routes;  
   
