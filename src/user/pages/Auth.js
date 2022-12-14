@@ -85,8 +85,7 @@ const Auth = () => {
               formData.append('password', formState.inputs.password.value);
               formData.append('image', formState.inputs.image.value);
             
-              
-            const responseData = await sendRequest(process.env.REACT_APP_BACKEND_URL + "/users/signup",
+            const responseData = await sendRequest("https://mern-stack-kappa.vercel.app/api/users/signup",
                 'POST',
                 formData
                 
