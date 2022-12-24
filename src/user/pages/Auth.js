@@ -9,6 +9,7 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hooks";
 import ImageUpload from "../../shared/components/FormElements/Image";
 
+import axios from 'axios';
 import "./Auth.css";
 import Card from "../../shared/components/UIElements/Card/Card";
 import { AuthContext } from "../../shared/context/auth-context";
@@ -85,10 +86,9 @@ const Auth = () => {
               formData.append('password', formState.inputs.password.value);
               formData.append('image', formState.inputs.image.value);
             
-            const responseData = await fetch("https://mern-stack-kappa.vercel.app/api/users/signup",{
+            const responseData = await axios("https://mern-stack-kappa.vercel.app/api/users/signup",{
               method: 'POST',
               body: formData,
-              
             });
             console.log(responseData)
             // auth.login(responseData.userId, responseData.token);
