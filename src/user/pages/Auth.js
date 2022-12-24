@@ -85,14 +85,15 @@ const Auth = () => {
               formData.append('password', formState.inputs.password.value);
               formData.append('image', formState.inputs.image.value);
             
-            const responseData = await sendRequest("https://mern-stack-kappa.vercel.app/api/users/signup",
-                'POST',
-                formData
-                
-            );
-            auth.login(responseData.userId, responseData.token);
+            const responseData = await fetch("https://mern-stack-kappa.vercel.app/api/users/signup",{
+              method: 'POST',
+              body: formData,
+              
+            });
+            console.log(responseData)
+            // auth.login(responseData.userId, responseData.token);
             } catch (err) {
-                
+                console.log(err)
             }
         };
 
