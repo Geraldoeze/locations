@@ -9,7 +9,7 @@ import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hooks";
 import ImageUpload from "../../shared/components/FormElements/Image";
 
-import axios from 'axios';
+
 import "./Auth.css";
 import Card from "../../shared/components/UIElements/Card/Card";
 import { AuthContext } from "../../shared/context/auth-context";
@@ -57,7 +57,7 @@ const Auth = () => {
          setIsLoginMode((prevMode) => !prevMode);
       };
         
-// https://mern-stack-kappa.vercel.app/
+
     const authSubmitHandler = async event => {
           event.preventDefault();
           
@@ -85,13 +85,11 @@ const Auth = () => {
               formData.append('name', formState.inputs.name.value);
               formData.append('password', formState.inputs.password.value);
               formData.append('image', formState.inputs.image.value);
-            
-            const responseData = await axios("https://mern-stack-kappa.vercel.app/api/users/signup",{
-              method: 'POST',
-              body: formData,
-            });
-            console.log(responseData)
-            // auth.login(responseData.userId, responseData.token);
+              const responseData = await sendRequest(process.env.REACT_APP_BACKEND_URL+"/users/signup", 'POST',
+              formData,
+            );
+      
+            auth.login(responseData.userId, responseData.token);
             } catch (err) {
                 console.log(err)
             }

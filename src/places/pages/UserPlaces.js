@@ -14,7 +14,7 @@ const UserPlaces = () => {
 
     
     const userId = useParams().userId;
-    console.log(userId)
+    
 
     useEffect( () => {
         

@@ -47,15 +47,12 @@ const placeSubmitHandler = async event => {
         formData.append('address', formState.inputs.address.value);
         formData.append('image', formState.inputs.image.value);
 
-        const reponse = await fetch('https://mern-stack-kappa.vercel.app/api/places', {
-        method: 'POST', 
-        body: formData, 
-        headers: {
+        await sendRequest(process.env.REACT_APP_BACKEND_URL+"/places", 'POST',
+        formData, 
+        {
             Authorization: 'Bearer ' + auth.token
         }
-    });
-        const data = await reponse.json()
-        console.log(data)
+    );
         // //Redirect the user to a different page
         navigate('/', {replace: true})
     } catch (err) {console.log(err)}
