@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from 'react-router';
 import { AuthContext } from './shared/context/auth-context';
 import { useAuth } from './shared/hooks/auth-hook';
 
-import React, {Suspense} from 'react';
+import React, {Suspense} from 'react'
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import LoadingSpinner from './shared/components/UIElements/LoadingSpinner';
 
